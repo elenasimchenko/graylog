@@ -8,6 +8,8 @@ class GrayLog
     private $facility = '';
     private $message = '';
     private $arFacilityFields = [];
+    
+    const URL = 'my.graylog.com';
 
     public function addField($fieldName, $fieldValue)
     {
@@ -70,7 +72,7 @@ class GrayLog
             unset($arData['full_message']);
         }
 
-        $url = 'syslog.synergy.ru';
+        $url = self::URL;
 
         try
         {
@@ -110,7 +112,7 @@ class GrayLog
     }
 
     /**
-     * Метод для установки предыдущих полей Facility
+     * Set Facility fields
      * @param $facility
      */
     public function setFacilityFields($facility)
